@@ -1,0 +1,1861 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ADVANCE × Sweet Sucos — Proposta Comercial 2026</title>
+<meta name="description" content="Proposta comercial da ADVANCE Assessoria &amp; Performance para a Sweet Sucos: estratégia, conteúdo, gestão de redes sociais e tráfego pago.">
+<meta name="robots" content="noindex, nofollow">
+<style>
+/* ==========================================================================
+   ADVANCE × SWEET SUCOS — PROPOSTA COMERCIAL
+   Folha de estilos única — variáveis, layout, componentes, animações, impressão
+   ========================================================================== */
+
+:root{
+  /* ---- Paleta institucional ADVANCE ---- */
+  --bg-primary:#050914;
+  --bg-secondary:#09111F;
+  --bg-elevated:#0D1526;
+  --blue-institutional:#075DFF;
+  --blue-electric:#198CFF;
+  --blue-light:#55B7FF;
+  --white:#FFFFFF;
+  --gray-light:#AAB6C8;
+  --gray-mid:#71809A;
+  --line:rgba(255,255,255,0.10);
+  --line-strong:rgba(255,255,255,0.18);
+
+  /* ---- Acentos discretos Sweet Sucos (uso restrito) ---- */
+  --sweet-green:#2FBF71;
+  --sweet-orange:#FF8A3D;
+
+  /* ---- Tipografia ---- */
+  --font-sans:"Segoe UI","Helvetica Neue",Helvetica,Arial,system-ui,-apple-system,sans-serif;
+  --fs-eyebrow:0.72rem;
+  --fs-body:1rem;
+
+  /* ---- Espaçamento ---- */
+  --space-xs:0.5rem;
+  --space-sm:1rem;
+  --space-md:1.75rem;
+  --space-lg:3rem;
+  --space-xl:5rem;
+  --space-2xl:8rem;
+
+  /* ---- Superfícies ---- */
+  --radius-sm:10px;
+  --radius-md:16px;
+  --radius-lg:24px;
+  --glass-bg:rgba(255,255,255,0.035);
+  --glass-bg-strong:rgba(255,255,255,0.06);
+
+  /* ---- Movimento ---- */
+  --ease:cubic-bezier(.19,1,.22,1);
+  --dur-fast:0.25s;
+  --dur-med:0.6s;
+  --dur-slow:1s;
+
+  --container:1180px;
+  --nav-h:76px;
+}
+
+*,*::before,*::after{box-sizing:border-box;}
+
+html{
+  scroll-behavior:smooth;
+  background:var(--bg-primary);
+}
+
+body{
+  margin:0;
+  background:var(--bg-primary);
+  color:var(--white);
+  font-family:var(--font-sans);
+  font-size:var(--fs-body);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+  position:relative;
+}
+
+img,svg{display:block;max-width:100%;}
+a{color:inherit;text-decoration:none;}
+ul{margin:0;padding:0;list-style:none;}
+button{font-family:inherit;cursor:pointer;}
+h1,h2,h3,h4,p{margin:0;}
+
+.container{
+  width:100%;
+  max-width:var(--container);
+  margin:0 auto;
+  padding:0 1.5rem;
+}
+
+.eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:0.5rem;
+  font-size:var(--fs-eyebrow);
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:var(--blue-light);
+  font-weight:600;
+}
+.eyebrow::before{
+  content:"";
+  width:18px;height:1px;
+  background:linear-gradient(90deg,var(--blue-electric),transparent);
+}
+
+h2.section-title{
+  font-size:clamp(1.75rem,3.4vw,2.6rem);
+  font-weight:700;
+  letter-spacing:-0.01em;
+  line-height:1.2;
+  max-width:44rem;
+}
+
+p.section-text{
+  color:var(--gray-light);
+  font-size:1.05rem;
+  max-width:42rem;
+  line-height:1.75;
+}
+
+.section{
+  position:relative;
+  padding:var(--space-2xl) 0;
+  border-top:1px solid var(--line);
+}
+
+.section-head{
+  display:flex;
+  flex-direction:column;
+  gap:1rem;
+  margin-bottom:var(--space-lg);
+}
+
+/* Focus visibility for keyboard navigation */
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible{
+  outline:2px solid var(--blue-electric);
+  outline-offset:3px;
+  border-radius:4px;
+}
+
+/* Skip link */
+.skip-link{
+  position:absolute;
+  left:1rem;top:-60px;
+  background:var(--blue-institutional);
+  color:var(--white);
+  padding:0.75rem 1.25rem;
+  border-radius:var(--radius-sm);
+  z-index:9999;
+  transition:top var(--dur-fast) var(--ease);
+  font-weight:600;
+  font-size:0.9rem;
+}
+.skip-link:focus{top:1rem;}
+
+/* ==========================================================================
+   FUNDO ABSTRATO — halos, grid técnico, linhas de luz (CSS puro)
+   ========================================================================== */
+.bg-fx{
+  position:fixed;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+  overflow:hidden;
+}
+.bg-fx__grid{
+  position:absolute;
+  inset:0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.035) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,0.035) 1px,transparent 1px);
+  background-size:64px 64px;
+  mask-image:radial-gradient(ellipse 70% 55% at 50% 0%,#000 0%,transparent 75%);
+  opacity:0.6;
+}
+.bg-fx__halo{
+  position:absolute;
+  border-radius:50%;
+  filter:blur(80px);
+  opacity:0.55;
+}
+.bg-fx__halo--1{
+  width:640px;height:640px;
+  top:-220px;right:-160px;
+  background:radial-gradient(circle,rgba(25,140,255,0.35),transparent 70%);
+}
+.bg-fx__halo--2{
+  width:520px;height:520px;
+  top:38vh;left:-220px;
+  background:radial-gradient(circle,rgba(7,93,255,0.28),transparent 70%);
+}
+.bg-fx__halo--3{
+  width:460px;height:460px;
+  bottom:-160px;right:8vw;
+  background:radial-gradient(circle,rgba(85,183,255,0.22),transparent 70%);
+}
+.bg-fx__beam{
+  position:absolute;
+  width:2px;
+  height:70vh;
+  top:-10vh;
+  background:linear-gradient(180deg,transparent,rgba(85,183,255,0.35),transparent);
+  transform:rotate(12deg);
+}
+.bg-fx__beam--1{left:18%;}
+.bg-fx__beam--2{left:62%;height:50vh;top:20vh;transform:rotate(-8deg);}
+
+.cursor-glow{
+  position:fixed;
+  top:0;left:0;
+  width:520px;height:520px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(25,140,255,0.14),rgba(25,140,255,0) 70%);
+  transform:translate(-50%,-50%);
+  pointer-events:none;
+  z-index:1;
+  will-change:transform;
+  transition:opacity .3s ease;
+}
+
+/* ==========================================================================
+   BARRA DE PROGRESSO DE LEITURA
+   ========================================================================== */
+.progress-bar{
+  position:fixed;
+  top:0;left:0;
+  height:3px;
+  width:0%;
+  background:linear-gradient(90deg,var(--blue-institutional),var(--blue-electric),var(--blue-light));
+  z-index:1000;
+  transition:width 0.1s linear;
+}
+
+/* ==========================================================================
+   MENU SUPERIOR
+   ========================================================================== */
+.nav{
+  position:fixed;
+  top:0;left:0;right:0;
+  z-index:900;
+  height:var(--nav-h);
+  display:flex;
+  align-items:center;
+  border-bottom:1px solid transparent;
+  transition:background var(--dur-fast) var(--ease),border-color var(--dur-fast) var(--ease),backdrop-filter var(--dur-fast) var(--ease);
+}
+.nav.is-scrolled{
+  background:rgba(5,9,20,0.78);
+  backdrop-filter:blur(16px) saturate(140%);
+  -webkit-backdrop-filter:blur(16px) saturate(140%);
+  border-bottom-color:var(--line);
+}
+.nav__inner{
+  width:100%;
+  max-width:var(--container);
+  margin:0 auto;
+  padding:0 1.5rem;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+}
+.brand{
+  display:flex;
+  flex-direction:column;
+  line-height:1;
+  gap:0.3rem;
+}
+.brand__name{
+  font-size:1.15rem;
+  font-weight:800;
+  letter-spacing:0.06em;
+  background:linear-gradient(90deg,var(--white),var(--blue-light));
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+.brand__tag{
+  font-size:0.56rem;
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  color:var(--gray-mid);
+}
+.nav__links{
+  display:flex;
+  align-items:center;
+  gap:2.1rem;
+}
+.nav__link{
+  position:relative;
+  font-size:0.9rem;
+  color:var(--gray-light);
+  padding:0.4rem 0.1rem;
+  transition:color var(--dur-fast) var(--ease);
+}
+.nav__link::after{
+  content:"";
+  position:absolute;
+  left:0;bottom:-2px;
+  width:100%;height:1px;
+  background:var(--blue-electric);
+  transform:scaleX(0);
+  transform-origin:left;
+  transition:transform var(--dur-fast) var(--ease);
+}
+.nav__link:hover,
+.nav__link[aria-current="true"]{color:var(--white);}
+.nav__link:hover::after,
+.nav__link[aria-current="true"]::after{transform:scaleX(1);}
+
+.btn{
+  position:relative;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:0.5rem;
+  padding:0.85rem 1.6rem;
+  border-radius:999px;
+  font-size:0.88rem;
+  font-weight:600;
+  letter-spacing:0.01em;
+  border:1px solid transparent;
+  transition:transform var(--dur-fast) var(--ease),box-shadow var(--dur-fast) var(--ease),background var(--dur-fast) var(--ease),border-color var(--dur-fast) var(--ease);
+  overflow:hidden;
+  white-space:nowrap;
+}
+.btn--primary{
+  background:linear-gradient(90deg,var(--blue-institutional),var(--blue-electric));
+  color:var(--white);
+  box-shadow:0 0 0 rgba(25,140,255,0);
+}
+.btn--primary:hover{
+  transform:translateY(-2px);
+  box-shadow:0 10px 30px -8px rgba(25,140,255,0.55);
+}
+.btn--ghost{
+  background:var(--glass-bg);
+  border-color:var(--line-strong);
+  color:var(--white);
+  backdrop-filter:blur(6px);
+}
+.btn--ghost:hover{
+  border-color:var(--blue-electric);
+  background:rgba(25,140,255,0.08);
+  transform:translateY(-2px);
+}
+.btn--sm{padding:0.65rem 1.2rem;font-size:0.82rem;}
+.btn__sheen{
+  position:absolute;
+  top:0;left:-60%;
+  width:40%;height:100%;
+  background:linear-gradient(115deg,transparent,rgba(255,255,255,0.35),transparent);
+  transform:skewX(-20deg);
+  transition:left 0.7s var(--ease);
+  pointer-events:none;
+}
+.btn:hover .btn__sheen{left:130%;}
+
+.nav__cta{display:flex;align-items:center;gap:0.9rem;}
+
+.nav__toggle{
+  display:none;
+  width:42px;height:42px;
+  border-radius:10px;
+  background:var(--glass-bg);
+  border:1px solid var(--line);
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  gap:5px;
+}
+.nav__toggle span{
+  display:block;width:18px;height:1.5px;background:var(--white);
+  transition:transform var(--dur-fast) var(--ease),opacity var(--dur-fast) var(--ease);
+}
+.nav__toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
+.nav__toggle[aria-expanded="true"] span:nth-child(2){opacity:0;}
+.nav__toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
+
+.mobile-menu{
+  position:fixed;
+  inset:var(--nav-h) 0 0 0;
+  background:rgba(5,9,20,0.98);
+  backdrop-filter:blur(18px);
+  z-index:850;
+  display:flex;
+  flex-direction:column;
+  padding:2rem 1.5rem;
+  gap:0.4rem;
+  transform:translateY(-8px);
+  opacity:0;
+  pointer-events:none;
+  transition:opacity var(--dur-fast) var(--ease),transform var(--dur-fast) var(--ease);
+}
+.mobile-menu.is-open{
+  opacity:1;
+  transform:translateY(0);
+  pointer-events:auto;
+}
+.mobile-menu__link{
+  font-size:1.3rem;
+  font-weight:600;
+  padding:0.9rem 0.2rem;
+  border-bottom:1px solid var(--line);
+  color:var(--white);
+}
+.mobile-menu__cta{margin-top:1.5rem;}
+
+/* ==========================================================================
+   HERO
+   ========================================================================== */
+.hero{
+  position:relative;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  padding-top:calc(var(--nav-h) + 2rem);
+  padding-bottom:4rem;
+  border-top:none;
+}
+.hero__grid{
+  display:grid;
+  grid-template-columns:1.05fr 0.85fr;
+  gap:3rem;
+  align-items:center;
+}
+.hero__eyebrow-row{
+  display:flex;
+  align-items:center;
+  gap:0.75rem;
+  margin-bottom:1.6rem;
+}
+.hero__title{
+  font-size:clamp(2.3rem,5vw,3.8rem);
+  font-weight:800;
+  letter-spacing:-0.02em;
+  line-height:1.08;
+  margin-bottom:1.6rem;
+}
+.hero__title .accent{
+  background:linear-gradient(90deg,var(--blue-light),var(--blue-electric));
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+}
+.hero__text{
+  color:var(--gray-light);
+  font-size:1.1rem;
+  line-height:1.8;
+  max-width:36rem;
+  margin-bottom:2.2rem;
+}
+.hero__actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:1rem;
+  margin-bottom:2.4rem;
+}
+.hero__note{
+  display:inline-flex;
+  align-items:center;
+  gap:0.6rem;
+  padding:0.7rem 1.1rem;
+  border:1px solid var(--line);
+  border-radius:999px;
+  background:var(--glass-bg);
+  font-size:0.82rem;
+  color:var(--gray-light);
+}
+.hero__note .dot{
+  width:7px;height:7px;border-radius:50%;
+  background:var(--blue-electric);
+  box-shadow:0 0 10px var(--blue-electric);
+}
+
+.hero__visual{
+  position:relative;
+  height:460px;
+  border:1px solid var(--line);
+  border-radius:var(--radius-lg);
+  background:linear-gradient(160deg,var(--glass-bg),rgba(255,255,255,0.015));
+  overflow:hidden;
+}
+.hero__visual::before{
+  content:"";
+  position:absolute;inset:0;
+  background-image:linear-gradient(rgba(255,255,255,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.05) 1px,transparent 1px);
+  background-size:36px 36px;
+  mask-image:radial-gradient(ellipse at 60% 30%,#000 0%,transparent 70%);
+}
+.hero__orbit{
+  position:absolute;
+  border:1px solid rgba(85,183,255,0.35);
+  border-radius:50%;
+}
+.hero__orbit--1{width:260px;height:260px;top:40px;right:20px;}
+.hero__orbit--2{width:380px;height:380px;top:-30px;right:-60px;border-color:rgba(25,140,255,0.2);}
+.hero__core{
+  position:absolute;
+  top:110px;right:110px;
+  width:120px;height:120px;
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(25,140,255,0.9),rgba(25,140,255,0.05) 70%);
+  filter:blur(2px);
+}
+.hero__node{
+  position:absolute;
+  width:8px;height:8px;
+  border-radius:50%;
+  background:var(--blue-light);
+  box-shadow:0 0 12px var(--blue-light);
+}
+.hero__stat{
+  position:absolute;
+  bottom:1.75rem;left:1.75rem;
+  right:1.75rem;
+  display:flex;
+  justify-content:space-between;
+  gap:1rem;
+  padding-top:1.25rem;
+  border-top:1px solid var(--line);
+}
+.hero__stat div{display:flex;flex-direction:column;gap:0.25rem;}
+.hero__stat span.k{font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--gray-mid);}
+.hero__stat span.v{font-size:1rem;font-weight:700;color:var(--white);}
+
+.scroll-hint{
+  position:absolute;
+  bottom:1.75rem;left:50%;
+  transform:translateX(-50%);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:0.6rem;
+  color:var(--gray-mid);
+  font-size:0.68rem;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+}
+.scroll-hint__line{
+  width:1px;height:38px;
+  background:linear-gradient(180deg,var(--blue-electric),transparent);
+  position:relative;
+  overflow:hidden;
+}
+.scroll-hint__line::after{
+  content:"";
+  position:absolute;
+  left:0;top:-38px;
+  width:100%;height:38px;
+  background:linear-gradient(180deg,transparent,var(--blue-light));
+  animation:scrollDrop 2.1s var(--ease) infinite;
+}
+@keyframes scrollDrop{
+  0%{top:-38px;}
+  70%{top:38px;}
+  100%{top:38px;}
+}
+
+/* ==========================================================================
+   CARDS / GLASS PANELS (uso geral)
+   ========================================================================== */
+.card{
+  position:relative;
+  border:1px solid var(--line);
+  border-radius:var(--radius-md);
+  background:var(--glass-bg);
+  backdrop-filter:blur(10px);
+  padding:2rem;
+  transition:transform var(--dur-fast) var(--ease),border-color var(--dur-fast) var(--ease),box-shadow var(--dur-fast) var(--ease),background var(--dur-fast) var(--ease);
+}
+.card:hover{
+  transform:translateY(-6px);
+  border-color:rgba(85,183,255,0.45);
+  background:var(--glass-bg-strong);
+  box-shadow:0 20px 45px -20px rgba(7,93,255,0.45);
+}
+.card__glow{
+  position:absolute;inset:-1px;
+  border-radius:inherit;
+  padding:1px;
+  background:linear-gradient(135deg,rgba(25,140,255,0),rgba(25,140,255,0.5),rgba(25,140,255,0));
+  opacity:0;
+  transition:opacity var(--dur-fast) var(--ease);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;
+  mask-composite:exclude;
+  pointer-events:none;
+}
+.card:hover .card__glow{opacity:1;}
+
+.card__icon{
+  width:46px;height:46px;
+  border-radius:12px;
+  display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(160deg,rgba(25,140,255,0.18),rgba(25,140,255,0.02));
+  border:1px solid rgba(85,183,255,0.25);
+  margin-bottom:1.4rem;
+  color:var(--blue-light);
+}
+.card__icon svg{width:22px;height:22px;}
+.card__title{font-size:1.15rem;font-weight:700;margin-bottom:0.6rem;}
+.card__text{color:var(--gray-light);font-size:0.95rem;line-height:1.7;}
+
+/* Reveal-on-scroll */
+.reveal{
+  opacity:0;
+  transform:translateY(28px);
+  filter:blur(6px);
+  transition:opacity var(--dur-slow) var(--ease),transform var(--dur-slow) var(--ease),filter var(--dur-slow) var(--ease);
+}
+.reveal.is-visible{
+  opacity:1;
+  transform:translateY(0);
+  filter:blur(0);
+}
+
+/* ==========================================================================
+   2. CENÁRIO E OPORTUNIDADE
+   ========================================================================== */
+.grid-3{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1.5rem;
+}
+/* Evita que itens de grid/flex ultrapassem a largura do container em telas estreitas */
+.grid-3 > *,
+.pillars > *,
+.deliveries > *,
+.timeline > *,
+.bonus__grid > *,
+.hero__grid > *,
+.deliv-list li,
+.bonus__list li{
+  min-width:0;
+}
+
+/* ==========================================================================
+   3. A SOLUÇÃO ADVANCE — pilares
+   ========================================================================== */
+.pillars{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:1.25rem;
+}
+.pillar{
+  border:1px solid var(--line);
+  border-radius:var(--radius-md);
+  padding:1.9rem 1.6rem;
+  background:linear-gradient(180deg,var(--glass-bg),transparent);
+  transition:border-color var(--dur-fast) var(--ease),transform var(--dur-fast) var(--ease);
+}
+.pillar:hover{border-color:rgba(85,183,255,0.4);transform:translateY(-4px);}
+.pillar__num{
+  font-size:0.72rem;
+  color:var(--gray-mid);
+  letter-spacing:0.12em;
+  margin-bottom:1rem;
+}
+.pillar__icon{color:var(--blue-light);margin-bottom:1.1rem;}
+.pillar__icon svg{width:26px;height:26px;}
+.pillar__title{font-size:1.05rem;font-weight:700;margin-bottom:0.5rem;}
+.pillar__text{color:var(--gray-light);font-size:0.9rem;line-height:1.65;}
+
+/* ==========================================================================
+   5. ENTREGAS MENSAIS
+   ========================================================================== */
+.deliveries{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:1.5rem;
+}
+.deliv-card{
+  border:1px solid var(--line);
+  border-radius:var(--radius-md);
+  background:var(--glass-bg);
+  padding:2rem;
+}
+.deliv-card__head{
+  display:flex;
+  align-items:center;
+  gap:0.9rem;
+  margin-bottom:1.4rem;
+  padding-bottom:1.2rem;
+  border-bottom:1px solid var(--line);
+}
+.deliv-card__head .card__icon{margin-bottom:0;flex:none;}
+.deliv-card__title{font-size:1.05rem;font-weight:700;}
+.deliv-list li{
+  display:flex;
+  align-items:flex-start;
+  gap:0.7rem;
+  padding:0.55rem 0;
+  color:var(--gray-light);
+  font-size:0.93rem;
+  line-height:1.5;
+}
+.deliv-list--2col{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  column-gap:2rem;
+}
+@media (max-width:560px){
+  .deliv-list--2col{grid-template-columns:1fr;}
+}
+.check{
+  flex:none;
+  width:19px;height:19px;
+  border-radius:50%;
+  border:1px solid rgba(85,183,255,0.45);
+  display:flex;align-items:center;justify-content:center;
+  margin-top:0.1rem;
+  color:var(--blue-light);
+  position:relative;
+}
+.check svg{
+  width:11px;height:11px;
+  stroke-dasharray:20;
+  stroke-dashoffset:20;
+  transition:stroke-dashoffset .6s var(--ease);
+}
+.reveal.is-visible .check svg{stroke-dashoffset:0;}
+.check::after{
+  content:"";
+  position:absolute;inset:-4px;
+  border-radius:50%;
+  box-shadow:0 0 0 0 rgba(25,140,255,0);
+}
+.deliv-card:hover .check::after{box-shadow:0 0 10px 1px rgba(25,140,255,0.35);}
+
+/* ==========================================================================
+   6. PROCESSO — TIMELINE
+   ========================================================================== */
+.timeline{
+  position:relative;
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:1.25rem;
+  margin-top:1rem;
+}
+.timeline__track{
+  position:absolute;
+  top:26px;left:0;right:0;
+  height:2px;
+  background:var(--line);
+}
+.timeline__progress{
+  position:absolute;
+  top:26px;left:0;
+  height:2px;
+  width:0%;
+  background:linear-gradient(90deg,var(--blue-institutional),var(--blue-light));
+  transition:width 0.25s linear;
+  box-shadow:0 0 10px rgba(25,140,255,0.6);
+}
+.timeline__step{position:relative;padding-top:3.2rem;}
+.timeline__dot{
+  position:absolute;
+  top:14px;left:0;
+  width:26px;height:26px;
+  border-radius:50%;
+  background:var(--bg-primary);
+  border:2px solid var(--line-strong);
+  display:flex;align-items:center;justify-content:center;
+  font-size:0.65rem;
+  font-weight:700;
+  color:var(--gray-mid);
+  transition:border-color .3s ease,color .3s ease,box-shadow .3s ease;
+  z-index:1;
+}
+.timeline__step.is-active .timeline__dot{
+  border-color:var(--blue-electric);
+  color:var(--blue-light);
+  box-shadow:0 0 14px rgba(25,140,255,0.55);
+}
+.timeline__num{font-size:0.72rem;color:var(--gray-mid);letter-spacing:0.1em;margin-bottom:0.5rem;}
+.timeline__title{font-size:1rem;font-weight:700;margin-bottom:0.5rem;}
+.timeline__text{color:var(--gray-light);font-size:0.87rem;line-height:1.6;}
+
+/* ==========================================================================
+   7. BÔNUS
+   ========================================================================== */
+.bonus{border-top:1px solid var(--line);}
+.bonus__panel{
+  position:relative;
+  border-radius:var(--radius-lg);
+  border:1px solid rgba(85,183,255,0.35);
+  background:linear-gradient(150deg,rgba(25,140,255,0.08),rgba(9,17,31,0.4));
+  padding:3rem;
+  overflow:hidden;
+}
+.bonus__panel::before{
+  content:"";
+  position:absolute;inset:0;
+  border-radius:inherit;
+  padding:1px;
+  background:linear-gradient(120deg,var(--blue-electric),transparent 35%,transparent 65%,var(--blue-light));
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;
+  mask-composite:exclude;
+  opacity:0.7;
+  pointer-events:none;
+}
+.badge{
+  display:inline-flex;
+  align-items:center;
+  gap:0.5rem;
+  padding:0.5rem 1rem;
+  border-radius:999px;
+  background:rgba(25,140,255,0.14);
+  border:1px solid rgba(85,183,255,0.4);
+  color:var(--blue-light);
+  font-size:0.7rem;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  font-weight:700;
+  margin-bottom:1.5rem;
+}
+.badge .dot{width:6px;height:6px;border-radius:50%;background:var(--blue-light);box-shadow:0 0 8px var(--blue-light);}
+.bonus__grid{
+  display:grid;
+  grid-template-columns:1.1fr 0.9fr;
+  gap:3rem;
+  align-items:start;
+}
+.bonus__title{font-size:clamp(1.5rem,3vw,2.1rem);font-weight:700;margin-bottom:1rem;line-height:1.25;}
+.bonus__text{color:var(--gray-light);font-size:1rem;line-height:1.75;margin-bottom:1.5rem;}
+.bonus__list{display:grid;gap:0.7rem;}
+.bonus__list li{display:flex;gap:0.7rem;align-items:flex-start;color:var(--gray-light);font-size:0.92rem;}
+.bonus__note{
+  margin-top:1.75rem;
+  font-size:0.8rem;
+  color:var(--gray-mid);
+  padding-top:1.25rem;
+  border-top:1px solid var(--line);
+}
+
+/* ==========================================================================
+   8. INVESTIMENTO
+   ========================================================================== */
+.pricing{
+  border:1px solid var(--line-strong);
+  border-radius:var(--radius-lg);
+  background:radial-gradient(ellipse at 50% -10%,rgba(25,140,255,0.16),transparent 60%),var(--bg-secondary);
+  padding:3.5rem;
+  text-align:center;
+  position:relative;
+}
+.pricing__value{
+  font-size:clamp(3rem,7vw,4.6rem);
+  font-weight:800;
+  letter-spacing:-0.02em;
+  background:linear-gradient(90deg,var(--white),var(--blue-light));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  margin:1rem 0 0.75rem;
+}
+.pricing__value sup{font-size:1.6rem;font-weight:700;margin-right:0.3rem;vertical-align:super;}
+.pricing__complement{color:var(--gray-light);font-size:1.05rem;max-width:34rem;margin:0 auto 2.5rem;}
+.pricing__list{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,320px));
+  justify-content:center;
+  gap:0.8rem 2.5rem;
+  text-align:left;
+  max-width:44rem;
+  margin:0 auto 2.75rem;
+}
+.pricing__list li{display:flex;gap:0.65rem;align-items:flex-start;color:var(--gray-light);font-size:0.93rem;}
+
+/* ==========================================================================
+   9. CONDIÇÕES
+   ========================================================================== */
+.conditions{
+  display:grid;
+  gap:0.9rem;
+}
+.condition{
+  display:grid;
+  grid-template-columns:auto 1fr;
+  gap:1rem;
+  align-items:flex-start;
+  padding:1.25rem 1.5rem;
+  border:1px solid var(--line);
+  border-radius:var(--radius-sm);
+  background:var(--glass-bg);
+}
+.condition__index{
+  font-size:0.8rem;
+  color:var(--blue-light);
+  font-weight:700;
+  padding-top:0.15rem;
+}
+.condition p{color:var(--gray-light);font-size:0.94rem;line-height:1.6;}
+.validity{
+  margin-top:1.75rem;
+  display:inline-flex;
+  align-items:center;
+  gap:0.6rem;
+  padding:0.85rem 1.25rem;
+  border:1px dashed var(--line-strong);
+  border-radius:var(--radius-sm);
+  color:var(--gray-light);
+  font-size:0.85rem;
+}
+
+/* ==========================================================================
+   10. CTA FINAL
+   ========================================================================== */
+.cta-final{
+  text-align:center;
+  position:relative;
+}
+.cta-final__title{
+  font-size:clamp(1.9rem,4vw,2.9rem);
+  font-weight:800;
+  max-width:42rem;
+  margin:0 auto 1.25rem;
+  line-height:1.2;
+}
+.cta-final__text{
+  color:var(--gray-light);
+  font-size:1.05rem;
+  max-width:36rem;
+  margin:0 auto 2.5rem;
+  line-height:1.75;
+}
+.cta-final__actions{
+  display:flex;
+  justify-content:center;
+  gap:1rem;
+  flex-wrap:wrap;
+}
+
+/* ==========================================================================
+   RODAPÉ
+   ========================================================================== */
+.footer{
+  border-top:1px solid var(--line);
+  padding:3.5rem 0 2.5rem;
+  position:relative;
+}
+.footer__top{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  flex-wrap:wrap;
+  gap:2rem;
+  margin-bottom:2.5rem;
+}
+.footer__tagline{color:var(--gray-light);font-size:0.95rem;max-width:26rem;margin-top:0.6rem;}
+.footer__social{
+  display:flex;
+  align-items:center;
+  gap:0.9rem;
+}
+.footer__social a{
+  width:40px;height:40px;
+  border-radius:50%;
+  border:1px solid var(--line);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--gray-light);
+  transition:border-color .25s ease,color .25s ease,transform .25s ease;
+}
+.footer__social a:hover{border-color:var(--blue-electric);color:var(--blue-light);transform:translateY(-3px);}
+.footer__social svg{width:17px;height:17px;}
+.footer__bottom{
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:0.75rem;
+  padding-top:1.75rem;
+  border-top:1px solid var(--line);
+  font-size:0.82rem;
+  color:var(--gray-mid);
+}
+
+/* ==========================================================================
+   BOTÃO VOLTAR AO TOPO
+   ========================================================================== */
+.back-to-top{
+  position:fixed;
+  right:1.75rem;bottom:1.75rem;
+  width:48px;height:48px;
+  border-radius:50%;
+  background:rgba(9,17,31,0.85);
+  border:1px solid var(--line-strong);
+  backdrop-filter:blur(10px);
+  color:var(--white);
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;
+  transform:translateY(12px);
+  pointer-events:none;
+  transition:opacity var(--dur-fast) var(--ease),transform var(--dur-fast) var(--ease),border-color var(--dur-fast) var(--ease);
+  z-index:800;
+}
+.back-to-top.is-visible{opacity:1;transform:translateY(0);pointer-events:auto;}
+.back-to-top:hover{border-color:var(--blue-electric);box-shadow:0 0 20px rgba(25,140,255,0.4);}
+.back-to-top svg{width:18px;height:18px;}
+
+/* ==========================================================================
+   MODAL
+   ========================================================================== */
+.modal-overlay{
+  position:fixed;inset:0;
+  background:rgba(2,4,10,0.72);
+  backdrop-filter:blur(6px);
+  z-index:1100;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:1.5rem;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity var(--dur-fast) var(--ease);
+}
+.modal-overlay.is-open{opacity:1;pointer-events:auto;}
+.modal{
+  width:100%;
+  max-width:460px;
+  background:var(--bg-secondary);
+  border:1px solid var(--line-strong);
+  border-radius:var(--radius-lg);
+  padding:2.5rem;
+  position:relative;
+  transform:translateY(18px) scale(0.98);
+  transition:transform var(--dur-fast) var(--ease);
+  box-shadow:0 30px 80px -20px rgba(0,0,0,0.6);
+}
+.modal-overlay.is-open .modal{transform:translateY(0) scale(1);}
+.modal__close{
+  position:absolute;
+  top:1.25rem;right:1.25rem;
+  width:34px;height:34px;
+  border-radius:50%;
+  background:var(--glass-bg);
+  border:1px solid var(--line);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--gray-light);
+}
+.modal__close:hover{color:var(--white);border-color:var(--blue-electric);}
+.modal__close svg{width:14px;height:14px;}
+.modal__title{font-size:1.4rem;font-weight:700;margin-bottom:0.9rem;padding-right:1.5rem;}
+.modal__text{color:var(--gray-light);font-size:0.95rem;line-height:1.7;margin-bottom:2rem;}
+.modal__actions{display:flex;gap:0.9rem;flex-wrap:wrap;}
+
+/* ==========================================================================
+   RESPONSIVIDADE
+   ========================================================================== */
+@media (max-width:1024px){
+  .hero__grid{grid-template-columns:1fr;}
+  .hero__visual{height:340px;order:-1;}
+  .pillars{grid-template-columns:repeat(2,1fr);}
+  .deliveries{grid-template-columns:1fr;}
+  .bonus__grid{grid-template-columns:1fr;}
+  .timeline{grid-template-columns:repeat(3,1fr);row-gap:2.5rem;}
+  .timeline__track,.timeline__progress{display:none;}
+}
+@media (max-width:860px){
+  .grid-3{grid-template-columns:1fr;}
+  .pricing__list{grid-template-columns:1fr;}
+}
+@media (max-width:760px){
+  .nav__links{display:none;}
+  .nav__cta .btn--ghost{display:none;}
+  .nav__toggle{display:flex;}
+  .pillars{grid-template-columns:1fr;}
+  .timeline{grid-template-columns:1fr 1fr;}
+  .section{padding:var(--space-xl) 0;}
+  .bonus__panel,.pricing{padding:2rem 1.5rem;}
+  .footer__top{flex-direction:column;}
+  .hero{padding-top:calc(var(--nav-h) + 1rem);}
+}
+@media (max-width:520px){
+  .timeline{grid-template-columns:1fr;}
+  .hero__stat{flex-direction:column;gap:0.9rem;}
+}
+
+/* ==========================================================================
+   PREFERS-REDUCED-MOTION
+   ========================================================================== */
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  *,*::before,*::after{
+    animation-duration:0.001ms !important;
+    animation-iteration-count:1 !important;
+    transition-duration:0.001ms !important;
+    scroll-behavior:auto !important;
+  }
+  .reveal{opacity:1;transform:none;filter:none;}
+  .cursor-glow{display:none;}
+}
+
+/* ==========================================================================
+   IMPRESSÃO / PDF
+   ========================================================================== */
+@media print{
+  :root{
+    /* Redefine as variáveis de cor para um tema claro e legível na impressão */
+    --gray-light:#3a3f4a;
+    --gray-mid:#555b66;
+    --line:#dddddd;
+    --line-strong:#cccccc;
+  }
+  .nav,.mobile-menu,.cursor-glow,.progress-bar,.back-to-top,.bg-fx,.modal-overlay,.scroll-hint{
+    display:none !important;
+  }
+  html,body{background:#ffffff !important;color:#0c0c0c !important;}
+  .hero{min-height:0;padding-top:1rem;}
+  .section{border-top:1px solid #ddd;padding:1.75rem 0;}
+  h2.section-title,.hero__title,.bonus__title,.pricing__value,.cta-final__title,.brand__name,.hero__stat span.v{
+    color:#0c0c0c !important;
+    -webkit-text-fill-color:#0c0c0c !important;
+  }
+  p.section-text,.hero__text,.card__text,.pillar__text,.deliv-list li,.bonus__text,.bonus__list li,.bonus__note,.condition p,.footer__tagline,.pricing__complement,.pricing__list li,.timeline__text,.cta-final__text,.footer__bottom,.validity{
+    color:#333 !important;
+  }
+  .card,.pillar,.deliv-card,.condition,.pricing,.bonus__panel{
+    background:#fafafa !important;
+    border:1px solid #ccc !important;
+    box-shadow:none !important;
+    break-inside:avoid;
+    page-break-inside:avoid;
+  }
+  .reveal{opacity:1 !important;transform:none !important;filter:none !important;}
+  .btn{border:1px solid #999 !important;color:#0c0c0c !important;background:none !important;box-shadow:none !important;}
+  .btn__sheen{display:none !important;}
+}
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+<!-- Efeitos de fundo abstratos (decorativos) -->
+<div class="bg-fx" aria-hidden="true">
+  <div class="bg-fx__grid"></div>
+  <div class="bg-fx__halo bg-fx__halo--1"></div>
+  <div class="bg-fx__halo bg-fx__halo--2"></div>
+  <div class="bg-fx__halo bg-fx__halo--3"></div>
+  <div class="bg-fx__beam bg-fx__beam--1"></div>
+  <div class="bg-fx__beam bg-fx__beam--2"></div>
+</div>
+<div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+<div class="progress-bar" id="progressBar" aria-hidden="true"></div>
+
+<!-- ==========================================================================
+     MENU SUPERIOR
+     ========================================================================== -->
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="#topo" class="brand" aria-label="ADVANCE — início">
+      <span class="brand__name">ADVANCE</span>
+      <span class="brand__tag">Assessoria &amp; Performance</span>
+    </a>
+
+    <nav class="nav__links" aria-label="Navegação principal">
+      <a class="nav__link" href="#visao-geral">Visão Geral</a>
+      <a class="nav__link" href="#entregas">Entregas</a>
+      <a class="nav__link" href="#processo">Processo</a>
+      <a class="nav__link" href="#investimento">Investimento</a>
+      <a class="nav__link" href="#condicoes">Condições</a>
+    </nav>
+
+    <div class="nav__cta">
+      <a href="#" class="btn btn--ghost btn--sm js-open-modal"><span class="btn__sheen"></span>Aprovar proposta</a>
+      <button class="nav__toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Menu mobile -->
+<nav class="mobile-menu" id="mobileMenu" aria-label="Navegação mobile">
+  <a class="mobile-menu__link" href="#visao-geral">Visão Geral</a>
+  <a class="mobile-menu__link" href="#entregas">Entregas</a>
+  <a class="mobile-menu__link" href="#processo">Processo</a>
+  <a class="mobile-menu__link" href="#investimento">Investimento</a>
+  <a class="mobile-menu__link" href="#condicoes">Condições</a>
+  <a href="#" class="btn btn--primary mobile-menu__cta js-open-modal"><span class="btn__sheen"></span>Aprovar proposta</a>
+</nav>
+
+<main id="conteudo">
+
+  <!-- ==========================================================================
+       1. HERO
+       ========================================================================== -->
+  <section class="hero" id="topo" aria-labelledby="hero-title">
+    <div id="visao-geral" style="position:relative;top:calc(-1 * var(--nav-h));"></div>
+    <div class="container">
+      <div class="hero__grid">
+        <div class="hero__content reveal">
+          <div class="hero__eyebrow-row">
+            <span class="eyebrow">Proposta Comercial • 2026</span>
+          </div>
+          <h1 class="hero__title" id="hero-title">Uma nova fase digital para a <span class="accent">Sweet Sucos.</span></h1>
+          <p class="hero__text">Estratégia, conteúdo, posicionamento e performance reunidos para transformar a presença digital da Sweet Sucos e ampliar sua conexão com consumidores e revendedores.</p>
+          <div class="hero__actions">
+            <a href="#entregas" class="btn btn--primary"><span class="btn__sheen"></span>Conhecer a proposta</a>
+            <a href="#" class="btn btn--ghost js-open-whatsapp"><span class="btn__sheen"></span>Falar com a ADVANCE</a>
+          </div>
+          <div class="hero__note">
+            <span class="dot" aria-hidden="true"></span>
+            Proposta desenvolvida exclusivamente para Sweet Sucos
+          </div>
+        </div>
+
+        <div class="hero__visual reveal" aria-hidden="true">
+          <div class="hero__orbit hero__orbit--2"></div>
+          <div class="hero__orbit hero__orbit--1"></div>
+          <div class="hero__core"></div>
+          <div class="hero__node" style="top:60px;left:40px;"></div>
+          <div class="hero__node" style="top:200px;left:70px;"></div>
+          <div class="hero__node" style="bottom:110px;left:120px;"></div>
+          <div class="hero__stat">
+            <div><span class="k">Área</span><span class="v">Estratégia Digital</span></div>
+            <div><span class="k">Escopo</span><span class="v">Conteúdo + Mídia</span></div>
+            <div><span class="k">Ciclo</span><span class="v">Mensal</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-hint">
+      <span>Rolar</span>
+      <span class="scroll-hint__line"></span>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       2. CENÁRIO E OPORTUNIDADE
+       ========================================================================== -->
+  <section class="section" aria-labelledby="cenario-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Cenário</span>
+        <h2 class="section-title" id="cenario-title">Uma marca com produto forte precisa de uma presença digital à altura.</h2>
+        <p class="section-text">A Sweet Sucos atua no atacado e no varejo, atendendo públicos com necessidades diferentes. O novo posicionamento digital deverá apresentar a qualidade dos produtos, despertar desejo no consumidor final e, ao mesmo tempo, gerar confiança e oportunidades comerciais com mercados, restaurantes, academias, distribuidores e novos revendedores.</p>
+      </div>
+
+      <div class="grid-3">
+        <article class="card reveal">
+          <div class="card__glow" aria-hidden="true"></div>
+          <div class="card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="0.6" fill="currentColor"/></svg>
+          </div>
+          <h3 class="card__title">Posicionamento</h3>
+          <p class="card__text">Construir uma comunicação visual consistente, profissional e reconhecível.</p>
+        </article>
+
+        <article class="card reveal">
+          <div class="card__glow" aria-hidden="true"></div>
+          <div class="card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="9" r="3"/><circle cx="17" cy="7" r="2.4"/><path d="M3.5 19c.6-3 2.6-4.8 4.5-4.8s3.9 1.8 4.5 4.8"/><path d="M14 19c.4-2 1.7-3.6 3.5-3.6s3.1 1.6 3.5 3.6"/></svg>
+          </div>
+          <h3 class="card__title">Relacionamento</h3>
+          <p class="card__text">Aproximar a marca de consumidores, parceiros e potenciais revendedores.</p>
+        </article>
+
+        <article class="card reveal">
+          <div class="card__glow" aria-hidden="true"></div>
+          <div class="card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V10"/><path d="M11 19V5"/><path d="M18 19v-7"/><path d="M3 19h18"/></svg>
+          </div>
+          <h3 class="card__title">Performance</h3>
+          <p class="card__text">Transformar conteúdo e mídia paga em alcance, oportunidades e crescimento.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       3. A SOLUÇÃO ADVANCE
+       ========================================================================== -->
+  <section class="section" aria-labelledby="solucao-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">A solução ADVANCE</span>
+        <h2 class="section-title" id="solucao-title">Uma operação completa de marketing para a Sweet Sucos.</h2>
+        <p class="section-text">A ADVANCE será responsável pelo planejamento, produção e distribuição dos conteúdos, além do acompanhamento estratégico das redes sociais e das campanhas de tráfego pago.</p>
+      </div>
+
+      <div class="pillars">
+        <div class="pillar reveal">
+          <div class="pillar__num">01</div>
+          <div class="pillar__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v4"/><path d="M12 17v4"/><path d="M3 12h4"/><path d="M17 12h4"/><circle cx="12" cy="12" r="4.5"/></svg></div>
+          <h3 class="pillar__title">Estratégia</h3>
+          <p class="pillar__text">Planejamento orientado por objetivos comerciais e pelas particularidades do atacado e do varejo.</p>
+        </div>
+        <div class="pillar reveal">
+          <div class="pillar__num">02</div>
+          <div class="pillar__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 10h8"/><path d="M8 14h5"/></svg></div>
+          <h3 class="pillar__title">Conteúdo</h3>
+          <p class="pillar__text">Produção de peças, vídeos e narrativas que traduzem a qualidade dos produtos Sweet Sucos.</p>
+        </div>
+        <div class="pillar reveal">
+          <div class="pillar__num">03</div>
+          <div class="pillar__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="14" rx="2"/><path d="M4 9h16"/><circle cx="8" cy="7" r="0.5" fill="currentColor"/></svg></div>
+          <h3 class="pillar__title">Gestão</h3>
+          <p class="pillar__text">Organização do calendário editorial, publicações e acompanhamento contínuo das redes sociais.</p>
+        </div>
+        <div class="pillar reveal">
+          <div class="pillar__num">04</div>
+          <div class="pillar__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V10"/><path d="M11 19V5"/><path d="M18 19v-7"/><path d="M3 19h18"/></svg></div>
+          <h3 class="pillar__title">Performance</h3>
+          <p class="pillar__text">Gestão de tráfego pago com testes, otimizações e leitura constante de resultados.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       5. ENTREGAS MENSAIS
+       ========================================================================== -->
+  <section class="section" id="entregas" aria-labelledby="entregas-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Entregas</span>
+        <h2 class="section-title" id="entregas-title">O que será entregue todos os meses</h2>
+      </div>
+
+      <div class="deliveries">
+        <article class="deliv-card reveal">
+          <div class="deliv-card__head">
+            <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 9h8"/><path d="M8 13h5"/></svg></div>
+            <h3 class="deliv-card__title">Conteúdo e Design</h3>
+          </div>
+          <ul class="deliv-list">
+            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span>8 posts mensais</li>
+            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span>Planejamento estratégico dos conteúdos</li>
+            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span>Criação de design</li>
+            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span>Desenvolvimento de copy e legendas</li>
+            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span>Programação e postagem dos conteúdos</li>
+          </ul>
+        </article>
+
+        <article class="deliv-card reveal">
+          <div class="deliv-card__head">
+            <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="M16 10l5-3v10l-5-3"/></svg></div>
+            <h3 class="deliv-card__title">Produção Audiovisual</h3>
+          </div>
+          <ul class="deliv-list">
+            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span>10 vídeos mensais</li>
+            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span>Roteirização dos vídeos</li>
+            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span>Até 2 captações presenciais por mês</li>
+            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span>Edição e finalização dos vídeos</li>
+            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span>Adaptação dos materiais para as redes sociais</li>
+          </ul>
+        </article>
+
+        <article class="deliv-card reveal">
+          <div class="deliv-card__head">
+            <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M8 12h8"/><path d="M12 8v8"/></svg></div>
+            <h3 class="deliv-card__title">Social Media</h3>
+          </div>
+          <ul class="deliv-list">
+            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span>Gestão das redes sociais</li>
+            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span>Organização do calendário editorial</li>
+            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span>Acompanhamento das publicações</li>
+            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span>Relatórios semanais</li>
+            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span>Relatório estratégico mensal</li>
+          </ul>
+        </article>
+
+        <article class="deliv-card reveal">
+          <div class="deliv-card__head">
+            <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V10"/><path d="M11 19V5"/><path d="M18 19v-7"/><path d="M3 19h18"/></svg></div>
+            <h3 class="deliv-card__title">Tráfego Pago</h3>
+          </div>
+          <ul class="deliv-list">
+            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span>Gestão de tráfego pago</li>
+            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span>Planejamento das campanhas</li>
+            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span>Configuração e acompanhamento</li>
+            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span>Testes e otimizações</li>
+            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span>Análise dos resultados</li>
+          </ul>
+        </article>
+
+        <article class="deliv-card reveal" style="grid-column:1 / -1;">
+          <div class="deliv-card__head">
+            <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7v5l3.5 2"/></svg></div>
+            <h3 class="deliv-card__title">Acompanhamento Estratégico</h3>
+          </div>
+          <ul class="deliv-list deliv-list--2col">
+            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span>Uma reunião estratégica quinzenal</li>
+            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span>Acompanhamento das ações</li>
+            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span>Análise de oportunidades</li>
+            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span>Alinhamento das próximas campanhas e conteúdos</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       6. PROCESSO DE TRABALHO
+       ========================================================================== -->
+  <section class="section" id="processo" aria-labelledby="processo-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Processo</span>
+        <h2 class="section-title" id="processo-title">Da estratégia à execução</h2>
+      </div>
+
+      <div class="timeline reveal" id="timeline">
+        <div class="timeline__track" aria-hidden="true"></div>
+        <div class="timeline__progress" id="timelineProgress" aria-hidden="true"></div>
+
+        <div class="timeline__step" data-step>
+          <div class="timeline__dot">01</div>
+          <div class="timeline__num">Etapa 01</div>
+          <h3 class="timeline__title">Imersão</h3>
+          <p class="timeline__text">Entendimento da marca, dos produtos, dos públicos e das prioridades comerciais.</p>
+        </div>
+        <div class="timeline__step" data-step>
+          <div class="timeline__dot">02</div>
+          <div class="timeline__num">Etapa 02</div>
+          <h3 class="timeline__title">Planejamento</h3>
+          <p class="timeline__text">Definição das pautas, roteiros, campanhas e calendário mensal.</p>
+        </div>
+        <div class="timeline__step" data-step>
+          <div class="timeline__dot">03</div>
+          <div class="timeline__num">Etapa 03</div>
+          <h3 class="timeline__title">Produção</h3>
+          <p class="timeline__text">Captação, criação dos materiais, design e edição dos conteúdos.</p>
+        </div>
+        <div class="timeline__step" data-step>
+          <div class="timeline__dot">04</div>
+          <div class="timeline__num">Etapa 04</div>
+          <h3 class="timeline__title">Distribuição</h3>
+          <p class="timeline__text">Programação das publicações e ativação das campanhas de mídia.</p>
+        </div>
+        <div class="timeline__step" data-step>
+          <div class="timeline__dot">05</div>
+          <div class="timeline__num">Etapa 05</div>
+          <h3 class="timeline__title">Otimização</h3>
+          <p class="timeline__text">Análise dos resultados, ajustes estratégicos e identificação de oportunidades.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       7. BÔNUS EXCLUSIVO
+       ========================================================================== -->
+  <section class="section bonus" aria-labelledby="bonus-title">
+    <div class="container">
+      <div class="bonus__panel reveal">
+        <span class="badge"><span class="dot" aria-hidden="true"></span>Bônus exclusivo</span>
+        <div class="bonus__grid">
+          <div>
+            <h2 class="bonus__title" id="bonus-title">Landing Page Comercial para a Sweet Sucos</h2>
+            <p class="bonus__text">Como bônus pela contratação, a ADVANCE desenvolverá uma landing page comercial para apresentar a marca, seus produtos e facilitar o contato de consumidores e potenciais revendedores.</p>
+            <p class="bonus__note">Domínio, hospedagem e eventuais ferramentas externas não estão incluídos.</p>
+          </div>
+          <ul class="bonus__list">
+            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span>Estrutura estratégica</li>
+            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span>Design responsivo</li>
+            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span>Apresentação da Sweet Sucos</li>
+            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span>Apresentação dos produtos e sabores</li>
+            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span>Comunicação direcionada ao atacado e ao varejo</li>
+            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span>Chamada para novos revendedores</li>
+            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span>Botões de contato pelo WhatsApp</li>
+            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span>Configuração das ferramentas de mensuração</li>
+            <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span>Publicação da página</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       8. INVESTIMENTO
+       ========================================================================== -->
+  <section class="section" id="investimento" aria-labelledby="investimento-title">
+    <div class="container">
+      <div class="pricing reveal">
+        <span class="eyebrow">Investimento mensal</span>
+        <div class="pricing__value" id="investimento-title"><sup>R$</sup>2.100</div>
+        <p class="pricing__complement">Plano completo de posicionamento, produção, gestão e performance.</p>
+
+        <ul class="pricing__list">
+          <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span>8 posts mensais</li>
+          <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span>10 vídeos mensais</li>
+          <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span>Até 2 captações mensais</li>
+          <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span>Social media</li>
+          <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span>Gestão de tráfego pago</li>
+          <li><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span>Acompanhamento estratégico</li>
+          <li style="grid-column:1/-1;"><span class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L19 7"/></svg></span>Landing page comercial como bônus</li>
+        </ul>
+
+        <a href="#" class="btn btn--primary js-open-modal"><span class="btn__sheen"></span>Quero iniciar este projeto</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       9. CONDIÇÕES COMERCIAIS
+       ========================================================================== -->
+  <section class="section" id="condicoes" aria-labelledby="condicoes-title">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Condições</span>
+        <h2 class="section-title" id="condicoes-title">Condições da parceria</h2>
+      </div>
+
+      <div class="conditions reveal">
+        <div class="condition"><span class="condition__index">01</span><p>Investimento mensal de R$ 2.100.</p></div>
+        <div class="condition"><span class="condition__index">02</span><p>Contrato mínimo de 3 meses.</p></div>
+        <div class="condition"><span class="condition__index">03</span><p>A landing page será desenvolvida como bônus após a assinatura do contrato.</p></div>
+        <div class="condition"><span class="condition__index">04</span><p>Em caso de cancelamento antes do período mínimo, será aplicada a multa prevista no contrato.</p></div>
+        <div class="condition"><span class="condition__index">05</span><p>A verba destinada aos anúncios não está incluída na mensalidade.</p></div>
+        <div class="condition"><span class="condition__index">06</span><p>Domínio, hospedagem e ferramentas externas não estão incluídos.</p></div>
+        <div class="condition"><span class="condition__index">07</span><p>A Sweet Sucos deverá fornecer acessos, informações e materiais necessários.</p></div>
+        <div class="condition"><span class="condition__index">08</span><p>Produções, captações ou demandas adicionais serão orçadas separadamente.</p></div>
+        <div class="condition"><span class="condition__index">09</span><p>O cronograma de produção será definido mensalmente entre a Sweet Sucos e a ADVANCE.</p></div>
+        <div class="condition"><span class="condition__index">10</span><p>Resultados dependem de fatores mercadológicos, investimento em mídia, participação do cliente e execução contínua, não existindo garantia de faturamento específico.</p></div>
+      </div>
+
+      <div class="validity">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5" width="17" height="16" rx="2"/><path d="M8 3v4"/><path d="M16 3v4"/><path d="M3.5 10h17"/></svg>
+        <span>Validade desta proposta: <strong id="validityText"></strong></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       10. ENCERRAMENTO E CTA
+       ========================================================================== -->
+  <section class="section cta-final" aria-labelledby="cta-title">
+    <div class="container">
+      <div class="reveal">
+        <span class="eyebrow" style="justify-content:center;">Próximo passo</span>
+        <h2 class="cta-final__title" id="cta-title">Vamos construir uma presença digital à altura da Sweet Sucos?</h2>
+        <p class="cta-final__text">A ADVANCE está pronta para transformar estratégia em execução e criar uma comunicação capaz de fortalecer a marca, aproximar consumidores e abrir novas oportunidades comerciais.</p>
+        <div class="cta-final__actions">
+          <a href="#" class="btn btn--primary js-open-modal"><span class="btn__sheen"></span>Aprovar proposta</a>
+          <a href="#" class="btn btn--ghost js-open-whatsapp"><span class="btn__sheen"></span>Falar pelo WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ==========================================================================
+     RODAPÉ
+     ========================================================================== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <div>
+        <span class="brand__name" style="font-size:1.3rem;">ADVANCE</span>
+        <p class="footer__tagline">Estratégia que orienta. Criatividade que conecta. Performance que impulsiona.</p>
+      </div>
+      <div class="footer__social">
+        <a href="#" id="instagramLink" target="_blank" rel="noopener noreferrer" aria-label="Instagram da ADVANCE">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="0.6" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="#" id="whatsappFooterLink" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp da ADVANCE">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 20l1.4-4.3A8 8 0 1 1 9 18.4L4 20Z"/><path d="M8.5 9.5c.3 2.7 2.3 4.7 5 5"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>Proposta comercial desenvolvida exclusivamente para Sweet Sucos.</span>
+      <span>© 2026 ADVANCE — Assessoria &amp; Performance</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Botão voltar ao topo -->
+<button class="back-to-top" id="backToTop" aria-label="Voltar ao topo">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg>
+</button>
+
+<!-- ==========================================================================
+     MODAL — APROVAR PROPOSTA
+     ========================================================================== -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalText">
+    <button class="modal__close" id="modalClose" aria-label="Fechar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12"/><path d="M18 6L6 18"/></svg>
+    </button>
+    <h3 class="modal__title" id="modalTitle">Vamos iniciar essa parceria?</h3>
+    <p class="modal__text" id="modalText">Ao continuar, você será direcionado ao WhatsApp da ADVANCE para confirmar o interesse e receber o contrato.</p>
+    <div class="modal__actions">
+      <a href="#" class="btn btn--primary" id="modalConfirm"><span class="btn__sheen"></span>Confirmar interesse</a>
+      <button class="btn btn--ghost" id="modalCancel"><span class="btn__sheen"></span>Voltar</button>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ==========================================================================
+   CONFIGURAÇÃO — edite aqui os dados de contato e validade da proposta
+   ========================================================================== */
+const CONFIG = {
+  whatsapp: "55SEUNUMERO",
+  whatsappMessage: "Olá! Analisei a proposta comercial da ADVANCE para a Sweet Sucos e gostaria de conversar sobre os próximos passos.",
+  proposalValidity: "INSERIR DATA",
+  advanceInstagram: "https://instagram.com/SEUUSUARIO"
+};
+
+(function(){
+  "use strict";
+
+  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var isTouch = window.matchMedia("(hover: none)").matches;
+
+  /* ---- Monta link do WhatsApp a partir do CONFIG ---- */
+  function buildWhatsappUrl(){
+    var phone = CONFIG.whatsapp.replace(/\D/g,"");
+    return "https://wa.me/" + phone + "?text=" + encodeURIComponent(CONFIG.whatsappMessage);
+  }
+  var whatsappUrl = buildWhatsappUrl();
+
+  document.querySelectorAll(".js-open-whatsapp, #whatsappFooterLink, #modalConfirm").forEach(function(el){
+    el.setAttribute("href", whatsappUrl);
+  });
+
+  var igLink = document.getElementById("instagramLink");
+  if(igLink){ igLink.setAttribute("href", CONFIG.advanceInstagram); }
+
+  var validityEl = document.getElementById("validityText");
+  if(validityEl){ validityEl.textContent = CONFIG.proposalValidity; }
+
+  /* ==========================================================================
+     BARRA DE PROGRESSO DE LEITURA
+     ========================================================================== */
+  var progressBar = document.getElementById("progressBar");
+  function updateProgressBar(){
+    var scrollTop = window.scrollY;
+    var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    progressBar.style.width = pct + "%";
+  }
+
+  /* ==========================================================================
+     BOTÃO VOLTAR AO TOPO
+     ========================================================================== */
+  var backToTop = document.getElementById("backToTop");
+  function updateBackToTop(){
+    if(window.scrollY > 640){ backToTop.classList.add("is-visible"); }
+    else{ backToTop.classList.remove("is-visible"); }
+  }
+  backToTop.addEventListener("click", function(){
+    window.scrollTo({ top:0, behavior: reduceMotion ? "auto" : "smooth" });
+  });
+
+  /* ==========================================================================
+     MENU: fundo ao rolar + destaque da seção ativa
+     ========================================================================== */
+  var nav = document.getElementById("nav");
+  var navLinks = document.querySelectorAll(".nav__link");
+  var sections = ["visao-geral","entregas","processo","investimento","condicoes"]
+    .map(function(id){ return document.getElementById(id); })
+    .filter(Boolean);
+
+  function onScroll(){
+    if(window.scrollY > 24){ nav.classList.add("is-scrolled"); }
+    else{ nav.classList.remove("is-scrolled"); }
+    updateProgressBar();
+    updateBackToTop();
+  }
+  window.addEventListener("scroll", onScroll, { passive:true });
+  onScroll();
+
+  if("IntersectionObserver" in window && sections.length){
+    var navObserver = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        var id = entry.target.id;
+        var link = document.querySelector('.nav__link[href="#' + id + '"]');
+        if(!link) return;
+        if(entry.isIntersecting){
+          navLinks.forEach(function(l){ l.removeAttribute("aria-current"); });
+          link.setAttribute("aria-current","true");
+        }
+      });
+    }, { rootMargin: "-45% 0px -50% 0px", threshold: 0 });
+    sections.forEach(function(sec){ navObserver.observe(sec); });
+  }
+
+  /* ==========================================================================
+     MENU MOBILE
+     ========================================================================== */
+  var navToggle = document.getElementById("navToggle");
+  var mobileMenu = document.getElementById("mobileMenu");
+
+  function closeMobileMenu(){
+    mobileMenu.classList.remove("is-open");
+    navToggle.setAttribute("aria-expanded","false");
+    navToggle.setAttribute("aria-label","Abrir menu");
+  }
+  function openMobileMenu(){
+    mobileMenu.classList.add("is-open");
+    navToggle.setAttribute("aria-expanded","true");
+    navToggle.setAttribute("aria-label","Fechar menu");
+  }
+  navToggle.addEventListener("click", function(){
+    var isOpen = mobileMenu.classList.contains("is-open");
+    if(isOpen){ closeMobileMenu(); } else { openMobileMenu(); }
+  });
+  mobileMenu.querySelectorAll("a").forEach(function(link){
+    link.addEventListener("click", closeMobileMenu);
+  });
+  document.addEventListener("keydown", function(e){
+    if(e.key === "Escape"){ closeMobileMenu(); }
+  });
+
+  /* ==========================================================================
+     ROLAGEM SUAVE PARA ÂNCORAS
+     ========================================================================== */
+  document.querySelectorAll('a[href^="#"]').forEach(function(link){
+    link.addEventListener("click", function(e){
+      var targetId = link.getAttribute("href");
+      if(!targetId || targetId === "#" || targetId.length < 2) return;
+      var target = document.querySelector(targetId);
+      if(!target) return;
+      e.preventDefault();
+      var top = target.getBoundingClientRect().top + window.pageYOffset - (window.innerWidth <= 760 ? 12 : 90);
+      window.scrollTo({ top: top, behavior: reduceMotion ? "auto" : "smooth" });
+      target.setAttribute("tabindex","-1");
+      target.focus({ preventScroll:true });
+    });
+  });
+
+  /* ==========================================================================
+     REVEAL ON SCROLL (Intersection Observer)
+     ========================================================================== */
+  var revealEls = document.querySelectorAll(".reveal");
+  if("IntersectionObserver" in window && !reduceMotion){
+    var revealObserver = new IntersectionObserver(function(entries, obs){
+      entries.forEach(function(entry, i){
+        if(entry.isIntersecting){
+          var el = entry.target;
+          setTimeout(function(){ el.classList.add("is-visible"); }, (i % 4) * 90);
+          obs.unobserve(el);
+        }
+      });
+    }, { threshold:0.12, rootMargin:"0px 0px -8% 0px" });
+    revealEls.forEach(function(el){ revealObserver.observe(el); });
+  } else {
+    revealEls.forEach(function(el){ el.classList.add("is-visible"); });
+  }
+
+  /* ==========================================================================
+     LINHA DO TEMPO — progresso conforme rolagem
+     ========================================================================== */
+  var timeline = document.getElementById("timeline");
+  var timelineProgress = document.getElementById("timelineProgress");
+  var steps = document.querySelectorAll("[data-step]");
+
+  function updateTimeline(){
+    if(!timeline) return;
+    var rect = timeline.getBoundingClientRect();
+    var vh = window.innerHeight;
+    var start = vh * 0.85;
+    var end = rect.height * 0.35;
+    var raw = (start - rect.top) / (start + end);
+    var pct = Math.max(0, Math.min(1, raw));
+    if(timelineProgress){ timelineProgress.style.width = (pct * 100) + "%"; }
+    steps.forEach(function(step, i){
+      var threshold = (i + 0.4) / steps.length;
+      step.classList.toggle("is-active", pct >= threshold);
+    });
+  }
+  window.addEventListener("scroll", updateTimeline, { passive:true });
+  window.addEventListener("resize", updateTimeline);
+  updateTimeline();
+
+  /* ==========================================================================
+     HALO DE LUZ QUE ACOMPANHA O CURSOR
+     ========================================================================== */
+  var cursorGlow = document.getElementById("cursorGlow");
+  if(cursorGlow && !isTouch && !reduceMotion){
+    var mx = window.innerWidth/2, my = window.innerHeight/2, cx = mx, cy = my;
+    window.addEventListener("mousemove", function(e){
+      mx = e.clientX; my = e.clientY;
+    }, { passive:true });
+    (function animateGlow(){
+      cx += (mx - cx) * 0.12;
+      cy += (my - cy) * 0.12;
+      cursorGlow.style.transform = "translate(" + cx + "px," + cy + "px)";
+      requestAnimationFrame(animateGlow);
+    })();
+  } else if(cursorGlow){
+    cursorGlow.style.display = "none";
+  }
+
+  /* ==========================================================================
+     INCLINAÇÃO SUTIL DOS CARDS NO HOVER
+     ========================================================================== */
+  if(!isTouch && !reduceMotion){
+    document.querySelectorAll(".card, .pillar, .deliv-card").forEach(function(card){
+      card.addEventListener("mousemove", function(e){
+        var r = card.getBoundingClientRect();
+        var px = (e.clientX - r.left) / r.width - 0.5;
+        var py = (e.clientY - r.top) / r.height - 0.5;
+        card.style.transform = "translateY(-6px) rotateX(" + (py * -4) + "deg) rotateY(" + (px * 4) + "deg)";
+      });
+      card.addEventListener("mouseleave", function(){
+        card.style.transform = "";
+      });
+    });
+  }
+
+  /* ==========================================================================
+     MODAL — APROVAR PROPOSTA
+     ========================================================================== */
+  var modalOverlay = document.getElementById("modalOverlay");
+  var modalClose = document.getElementById("modalClose");
+  var modalCancel = document.getElementById("modalCancel");
+  var lastFocused = null;
+
+  function openModal(){
+    lastFocused = document.activeElement;
+    modalOverlay.classList.add("is-open");
+    document.body.style.overflow = "hidden";
+    modalClose.focus();
+    document.addEventListener("keydown", trapModalKeys);
+  }
+  function closeModal(){
+    modalOverlay.classList.remove("is-open");
+    document.body.style.overflow = "";
+    document.removeEventListener("keydown", trapModalKeys);
+    if(lastFocused){ lastFocused.focus(); }
+  }
+  function trapModalKeys(e){
+    if(e.key === "Escape"){ closeModal(); return; }
+    if(e.key === "Tab"){
+      var focusable = modalOverlay.querySelectorAll('a[href], button:not([disabled])');
+      var first = focusable[0], last = focusable[focusable.length - 1];
+      if(e.shiftKey && document.activeElement === first){ e.preventDefault(); last.focus(); }
+      else if(!e.shiftKey && document.activeElement === last){ e.preventDefault(); first.focus(); }
+    }
+  }
+
+  document.querySelectorAll(".js-open-modal").forEach(function(btn){
+    btn.addEventListener("click", function(e){
+      e.preventDefault();
+      openModal();
+    });
+  });
+  modalClose.addEventListener("click", closeModal);
+  modalCancel.addEventListener("click", closeModal);
+  modalOverlay.addEventListener("click", function(e){
+    if(e.target === modalOverlay){ closeModal(); }
+  });
+
+})();
+</script>
+</body>
+</html>
